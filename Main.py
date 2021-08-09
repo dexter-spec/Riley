@@ -261,7 +261,7 @@ def taskexecution(x):
         with open('email_id', 'ab') as handle:
             pickle.dump(b, handle, protocol=pickle.HIGHEST_PROTOCOL)
     def wishMe():
-        hour = int(datetime.datetime.now().hour)
+        hour = int(datetime.now().hour)
         if hour>=0 and hour<12:
             speak("Good Morning!")
 
@@ -434,29 +434,29 @@ def taskexecution(x):
                     la = la.replace("are","")
                     print(la)
                     results = wikipedia.summary(la, sentences=2)
-                    file_read()
+
                     speak(f" According to Wikipedia")
                     print(results)
                     
                     speak(results)
             #searching wikipedia
                 except:
-                    file_read()
                     speak(f"looks like wikipedia has no information about it whatsoever")
             elif "ceo" in query and "google" in query and "who" in query:
                 speak("sundarajan pichai also known as sundar pichai is the director and ceo of google inc and also alphabet inc, if you use google chrome you better thank him") 
             elif "what" in query and "mean" in query or "meaning" in query:
                 if "what" in query:
+
                     la = query.replace("what", "")
-                    la = la.replace("does","")
                     la = la.replace("mean","")
+                    la = la.replace("does","")
                     la = la.replace("an","")
                     la = la.replace("a","")
-                    la = query.replace("synonym" , "")
+                    la = la.replace("synonym" , "")
                     la = la.replace("of","")
                     la = la.replace("off","")
                     la = la.replace("for", "")
-                    la = query.replace("other","")
+                    la = la.replace("other","")
                     la = la.replace("off","")
                     la = la.replace("of","")
                     la= la.replace("word","")
@@ -475,11 +475,11 @@ def taskexecution(x):
                     la = la.replace("word","")
                     la = la.replace("an" , "")
                     la = la.replace("a","")
-                    la = query.replace("synonym" , "")
+                    la = la.replace("synonym" , "")
                     la = la.replace("of","")
                     la = la.replace("off","")
                     la = la.replace("for", "")
-                    la = query.replace("other","")
+                    la = la.replace("other","")
                     la = la.replace("off","")
                     la = la.replace("of","")
                     la= la.replace("word","")
@@ -492,21 +492,29 @@ def taskexecution(x):
                     la = la.replace("is","")
                     la = la.replace("are","")
                 else:
-                    speak("which word's meaning do i have to find?")
+                    print("which word's meaning do i have to find?")
                     la = takeCommand()
                     
                     
                 try:
-                    
+                    print (la)
                     dictionary=PyDictionary()
                     print (dictionary.meaning(la))
-                    speak (dictionary.meaning(la))
+                    
+                    
                 except:
-                    speak("i dont know what {la} means")
+                    print(f"i dont know what {la} means")
                                         
-            elif "add " in query and "device" in query or "register" in query and "device" in query:
-                speak("text input only")
-                write()
+
+                        
+                
+                
+                
+                
+                
+                
+                
+                
                 
             elif 'open youtube'in query or "youtube kholo" in query:
                 try:
@@ -524,7 +532,7 @@ def taskexecution(x):
                         la = la.replace("of","")
                         la = la.replace("off","")
                         la = la.replace("for", "")
-                        la = query.replace("other","")
+                        la = la.replace("other","")
                         la = la.replace("off","")
                         la = la.replace("of","")
                         la= la.replace("word","")
@@ -555,7 +563,7 @@ def taskexecution(x):
                         la = la.replace("of","")
                         la = la.replace("off","")
                         la = la.replace("for", "")
-                        la = query.replace("other","")
+                        la = la.replace("other","")
                         la = la.replace("off","")
                         la = la.replace("of","")
                         la= la.replace("word","")
@@ -573,7 +581,7 @@ def taskexecution(x):
                     print (dictionary.getSynonyms(la))
                     speak(dictionary.getSynonyms(la))
                 except:
-                    speak("i couldnt find any synonyms for the word {la}")
+                    speak(f"i couldnt find any synonyms for the word {la}")
                     
 
             elif 'open google' in query or "google kholo" in query :
@@ -842,12 +850,7 @@ def taskexecution(x):
                     print(e)
                     speak("mmmmm looks like you havent introduced any of your friends to me")
                     speak("do you want to add your friends?")
-                    hm= takeCommand().lower()
-                    if "yeah" in hm or "yes" in hm or "yup" in hm or "ok" in hm or "okay" in hm:
-                        speak("you will have to type it")
-                        my_friends()
-                    else:
-                        speak("okay, but i think i should know you more")
+
                         
                 except Exception as x:
                     print(x)
@@ -855,12 +858,7 @@ def taskexecution(x):
                 except ValueError:
                     speak(f"i dont think you have introduced {kisko} to me")
             
-            elif "add" in query and "friends" in query or "new" in query and "friend" in query or "new" in query and "friends" in query:
-                try:
-                    speak("you will have to type it")
-                    my_friends()
-                except:
-                    speak("i wasn't able to do that")
+
             
             #sending emails
             elif "what can you do" in query:
@@ -958,7 +956,7 @@ def taskexecution(x):
                     
                 
             elif "where is"  in query:
-                try :
+                try:
                     speak("who should i find? ")
                     kisko = takeCommand().lower()
                     
@@ -997,67 +995,22 @@ def taskexecution(x):
                     
                     webbrowser.open("https://www.google.com/android/find")
                     tl.sleep(10)
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    
+                    for q in range(0,50):
+                        pyautogui.press("backspace")
+                                          
                     pyautogui.typewrite(username)
                     tl.sleep(1)
                     pyautogui.press("enter")
                     tl.sleep(2)
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
-                    pyautogui.press("backspace")
+                    for q in range(0, 50):
+                        pyautogui.press("backspace")
                     pyautogui.typewrite(password)
                     tl.sleep(1)
                     pyautogui.press("enter")
                     tl.sleep(4)
                     speak("found!!!")
-                    
-
+                
+                
                 except FileNotFoundError:
                     speak("i am unable to do that,looks like i havent got any infomation about your friends,say add a device")
                 except ValueError:
@@ -1065,8 +1018,8 @@ def taskexecution(x):
                 except :
                     print("i was unable to do that")
                     speak("i was unable to do that")
-                                        
-                                                
+
+                                    
             elif "close window" in query or "close tab" in query or "close" in query:
                 speak("should i close the window?")
                 hm = takeCommand().lower()
@@ -1383,28 +1336,8 @@ def taskexecution(x):
                         
                 except ValueError:
                     speak("you didnt ask me to remember anything")
-
-                
-                    
             
-            
-            elif "routine" in query or "timetable" in query:
-                speak("edit your routine sir")
-                print("note that the time has to be in 12 hour format")
-                print("format H:M AM/PM CasESeNsitIve")
-                print("enter done in both feilds to save")
-                
-                dump_routine()
-                
-                
-            
-            
-            
-            
-            
-                    
-                    
-                    
+        
             elif "shut down" in query and "computer" in query or "off" in query and "computer" in query:
                 try:
                     
@@ -1418,6 +1351,7 @@ def taskexecution(x):
                         speak("shutting down")
                         tl.sleep(5)
                         os.system("shutdown /s /t 1") 
+                        os.system("poweroff")
                 except: 
                     speak("i wasnt able to do it")
             elif "reboot" in query and "computer" in query or "restart" in query and "computer" in query:
@@ -1433,7 +1367,8 @@ def taskexecution(x):
                     else: 
                         speak("rebooting")
                         tl.sleep(2)
-                        os.system("shutdown /r /t 1")     
+                        os.system("shutdown /r /t 1") 
+                        os.system("reboot")    
                 except: 
                     speak("i wasnt able to do it")
             
@@ -1547,13 +1482,12 @@ def taskexecution(x):
                     
                     pyautogui.hotkey("function","f10")
             else:
-                
-                #continue
-                wolf(query) 
-                print("web")
+                # do not waste time here
+                pass
+
                             
                                 
-                              
+                            
 
 
 
@@ -1586,17 +1520,17 @@ def power(v):
 
 
 
-                       
+                    
 
 
-                                                              
-                                     
-                                       
+                                                            
+                                    
+                                    
                             
-                           
+                        
                 
                                 
-                                   
+                                
 
 
 
@@ -1906,7 +1840,7 @@ from time import sleep
 
 
 def alarm_runing():
-   
+
 
 
     ########defs######
