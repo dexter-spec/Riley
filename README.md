@@ -21,4 +21,4 @@ Riley,is a virtual assistant.
   
   
   
-  #Requires python 3.6.x(preferrably 3.6.0) for it to be compatible
+  #Requires python 3.6.x(preferably 3.6.0) for it to be compatible
