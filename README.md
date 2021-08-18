@@ -15,3 +15,10 @@ Riley,is a virtual assistant.
    
   
   # I know the code is not organised nicely , but we eventually will end up there
+  
+  
+  
+  
+  
+  
+  #Requires python 3.6.x(preferrably 3.6.0) for it to be compatible
